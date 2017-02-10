@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 
 
 
+
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour {
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
+        
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
 
         if (moveVertical > 0)
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour {
         {
             other.gameObject.SetActive(false);
             count = count + 1;
+            countText.text = "Objects Collected: " + count;
             SetCountText();
         }
     }
